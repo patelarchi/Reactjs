@@ -32,10 +32,10 @@ export default function Navbar(props) {
   )
 }
 
-//for validation
+// For validation
 Navbar.propTypes = {
-    title: PropTypes.string.isRequired,
-    aboutText: PropTypes.string
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string
 }
 
 //for default values
