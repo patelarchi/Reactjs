@@ -47,7 +47,7 @@ export default function TextForm(props) {
 
   return (
     <>
-    <div className="container">
+    <div className={`container bg-${props.mode} text-${props.textColor}`}>
       <div className="form-floating m-5">
         <h2 className='pb-3'>{props.heading}</h2>
         <textarea className="form-control" onChange={handleOnChange} spellCheck="true" id="myBox" rows='8' value={text}></textarea>
@@ -69,7 +69,7 @@ export default function TextForm(props) {
         <p>{text.split(/\n+/).filter((element) => element.length !== 0).length} paragraph </p>
         <p>{text.split(' ').length * 0.008} Minutes to read</p>
         <h3>Preview</h3>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter something in the textbox to preview it here.."}</p>
       </div>
     </div>
     </>
