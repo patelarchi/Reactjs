@@ -3,29 +3,38 @@ import React, { useState } from 'react';
 export default function TextForm(props) {
   const handleUpClick = () => {
     setText(text.toUpperCase());
+    props.showAlert('convert uppercase successfuly','success','info');
   };
 
   const handleLwClick = () => {
     setText(text.toLowerCase());
+    props.showAlert('convert lowercase successfuly','success','info');
+
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
   const handleClearClick = () => {
     setText('');
+    props.showAlert('clear text successfuly','success','info');
   };
 
   const handleReverseClick = () => {
     setText(text.split('').reverse().join(''));
+    props.showAlert('convert text to reverse successfuly','success','info');
+
   };
 
   const handleRemoveSpacesClick = () => {
     let newText = text.replace(/\s+/g, ' ').trim();
     setText(newText);
+    props.showAlert('remove extra space successfuly','success','info');
+
   }
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(text);
+    props.showAlert('copy text successfuly','success','info');
   };
 
   const handleDownloadClick = () => {
@@ -35,6 +44,8 @@ export default function TextForm(props) {
     element.download = 'text.txt';
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
+    props.showAlert('download text in .txt format successfuly','success','info');
+
   };
 
   const handleFindAndReplaceClick = () => {
