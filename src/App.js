@@ -22,6 +22,13 @@ import Alert from './components/Alert';
         setAlert(null);
       }, 3000);
     }
+
+    const toggleBlueishMode = () => {
+      setMode('danger');
+      setTextColor('light');
+      document.body.style.backgroundColor = 'Red';
+      showAlert('enable blueish mode succesfully','success','primary');
+    }
     const toggleMode = () => {
       if(mode === 'dark'){
         setMode('light');
@@ -38,7 +45,7 @@ import Alert from './components/Alert';
     }
     return (
       <>
-        <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
+        <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode}  toggleBlueishMode={toggleBlueishMode} toggleMode={toggleMode}/>
         <Alert alert={alert}/>
         <TextForm showAlert={showAlert} heading="Enter Your Text to anaylze below" mode={mode} textColor={textColor}/>
        {/* <About/> */}

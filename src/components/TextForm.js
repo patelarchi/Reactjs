@@ -75,9 +75,10 @@ export default function TextForm(props) {
     <div className="container">
       <div className="row my-3 m-5">
         <h3>Your text Summury</h3>
-        <p>{text.split(/[.!?]+/).length || 0} sentences , {text.split(' ').length} words and {text.length} characters</p>
-        <p>{text.match(/[aeiouAEIOU]/g)?.length || 0} vowels and {text.match(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/g)?.length || 0} constants</p>
-        <p>{text.split(/\n+/).filter((element) => element.length !== 0).length} paragraph </p>
+        
+        <p>{text.length !== 0 ? text.split(/[.!?]+/).length : 0} sentences , {text.length !== 0 ? text.split(' ').length : 0} words and {text.length !== 0 ? text.length : 0} characters</p>
+        <p>{text.length !== 0 ? text.match(/[aeiouAEIOU]/g)?.length : 0} vowels and {text.length !== 0 ? text.match(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/g)?.length :  0} constants</p>
+        <p>{text.length !== 0 ? text.split(/\n+/).filter((element) => element.length !== 0).length : 0} paragraph </p>
         <p>{text.split(' ').length * 0.008} Minutes to read</p>
         <h3>Preview</h3>
         <p>{text.length > 0 ? text : "Enter something in the textbox to preview it here.."}</p>
